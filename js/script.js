@@ -34,5 +34,14 @@
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 //Creazione funzione ad hoc.
 //Creo prima una var che condenga l'espressione per il calcolo dei numeri randomici tra 1 e 100:
-var randomNumber = Math.floor((Math.random() * 100) + 1);
-console.log(randomNumber);
+// var randomNumber = Math.floor((Math.random() * 100) + 1);
+// console.log(randomNumber);
+//La userò, all'interno di una funzione:
+function random(a, b) {
+  randomNumber = Math.floor((Math.random() * b) + a);
+  // console.log(randomNumber);
+  return randomNumber;
+}
+
+var minePosition = random(1, 100);
+console.log(minePosition);
