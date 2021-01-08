@@ -1,7 +1,8 @@
 // TRACCIA:
 // Esercizio di oggi: campo minato
 // repo/cartella:  js-campominato
-// Descrizione
+// Descrizione:
+
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 // I numeri non possono essere duplicati (tadaaa!)
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
@@ -28,3 +29,10 @@
 // a differenza del for, non è legato per forza a un contatore (ma appunto a una condizione che si deve verificare affinché
 // il codice al suo interno venga eseguito!).
 // Quindi se non sappiamo esattamente quante volte si deve ripetere un'istruzione , cosa sarà meglio usare tra i due?
+
+
+// Il computer deve generare 16 numeri casuali tra 1 e 100.
+//Creazione funzione ad hoc.
+//Creo prima una var che condenga l'espressione per il calcolo dei numeri randomici tra 1 e 100:
+var randomNumber = Math.floor((Math.random() * 100) + 1);
+console.log(randomNumber);
