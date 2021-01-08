@@ -43,5 +43,11 @@ function random(a, b) {
   return randomNumber;
 }
 
-var minePosition = random(1, 100);
-console.log(minePosition);
+// var minePosition = random(1, 100);
+// console.log(minePosition);
+
+//Ma, lo ribadisco: Il computer deve generare 16 numeri casuali. Posso, dunque, usare un ciclo for che abbia la suo interno la CALL alla funzione sopra creata:
+for ( var i = 1; i <= 16; i++) {
+  var minePosition = random(1, 100);
+  console.log(minePosition);
+}
