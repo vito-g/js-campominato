@@ -73,7 +73,7 @@ for (var x = 1; x < arrayMinePosition.length; x++) {
   if (arrayMinePosition[0 + k] / arrayMinePosition[x] !== 1) {
     // console.log(arrayMinePosition[x]);
     arrayMineOk.push(arrayMinePosition[x]);
-    console.log(arrayMineOk);//Aggiorna l'array ad ogni iterazione del ciclo
+    // console.log(arrayMineOk);//Aggiorna l'array ad ogni iterazione del ciclo
   } else {
     arrayMineOk.push(random(1,100));
   }
