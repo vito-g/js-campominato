@@ -68,7 +68,7 @@ var arrayMineOk = [];
 arrayMineOk.push(arrayMinePosition[0]);
 console.log(arrayMineOk);//L'array arrayMineOk lo popolo col primo item preso dall'array precedente.
 //Il for che segue controlla solo che il primo item del nuovo array sia diverso da tutti quelli che lo precedereanno
-
+//Proviamo ad estendere il controllo su ciascuno degli item che seguono il primo(***)
 for (var x = 1; x < arrayMinePosition.length; x++) {
   if (arrayMinePosition[0 + k] / arrayMinePosition[x] !== 1) {
     // console.log(arrayMinePosition[x]);
