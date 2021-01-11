@@ -95,7 +95,8 @@ while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
       alert('Numero già inserito');
     } else {
       //SE il numero non è stato inserito devo controllare che non corrisponda a nessuno dei numeri identificativi delle mine. Faccio il controllo a mezzo di una nuova FX che chiamerò "isWinning". Questa, dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
-      if (isWinning(arrayMinePosition,string) == false) {
+      // if (isWinning(arrayMinePosition,string) == false) { //Riga di codice che posso anche scrivere come segue
+      if (!isWinning(arrayMinePosition,string)) {
         alert('Hai perso! Ed Il tuo punteggio è ' + arrayUserNumbers.length);
       }
       arrayUserNumbers.push(string);
