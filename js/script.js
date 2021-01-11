@@ -83,7 +83,7 @@ function stringValid(inputUtente) {
   }
   return true;
 }
-// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo sul numero inserito attraverso un IF.
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato il controllo, sul: numero inserito; sul numero di volte che quel numero è stato inserito; e sul numero di input utente che non deve superare un max di 84 inserimenti. Il tutto attraverso un IF.
 //Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
