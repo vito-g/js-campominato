@@ -81,35 +81,36 @@ function stringValid(inputUtente) {
   }
   return true;
 }
-// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque, il prompt va inserito in un ciclo in cui si verifichi che: lo stesso numero non sia stato inserito + volte dall'utente; e che il numero di input utente non abbia superato un max di 84 inserimenti di valori accettabili.
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque, il prompt va inserito in un ciclo in cui si verifichi che: lo stesso numero non sia stato inserito + volte dall'utente; e che il numero di input utente non abbia superato un max di 84 inserimenti di valori accettabili e vincenti.
 //Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente finchè questi risultano non presenti nell'array randomico di 16 numeri identificativi delle mine. In altri termini, se il numero scelto dall'utente è pari ad uno presente nella lista delle mine, l'utente perde ed il game si interrompe.
+// Diversamente ad ogni numero inserito senza che avvenga alcuna "esplosione" delle mine lo SCORE dell'utente aumenterà di un punto. Quindi se l'utente inserirà, per es, 3 soli numeri vincenti, l'array si popolerà fino a questi numeri vincenti. Lo SCORE finale sarà dunque dato dalla lunghezza dell'array.
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
 var string;
 while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
   string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
-  if (stringValid(string)) {
-    if (arrayUserNumbers.includes(string) === true) {
+  if (stringValid(string)) { //SE la FX "stringValid" restituisce valore TRUE: i valori inseriti dall'utente sono accettabili e lo script esegue il blocco di codice che segue
+    if (arrayUserNumbers.includes(string)) { //Se il numero inserito è incluso già nell'array, allora avvisa l'utente di questo.
       alert('Numero già inserito');
     } else {
-      //SE il numero non è stato inserito deve sottoporlo a validazione che effettuo a mezzo di una nuova funzione. Questa dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
+      //SE il numero non è stato inserito devo controllare che non corrisponda a nessuno dei numeri identificativi delle mine. Faccio il controllo a mezzo di una nuova FX che chiamerò "isWinning". Questa, dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
       if (isWinning(arrayMinePosition,string) == false) {
-        alert('Hai perso!');
+        alert('Hai perso! Ed Il tuo punteggio è ' + arrayUserNumbers.length);
       }
       arrayUserNumbers.push(string);
       if (arrayUserNumbers.length === 84) {
-        alert('Hai vinto');
+        alert('Hai vinto! Ed Il tuo punteggio è ' + arrayUserNumbers.length);
       }
     }
   } else {
      alert('Devi inserire un numero da 1 a 100');
   }
 }
-alert('Il tuo punteggio è ' + arrayUserNumbers.length);
+
 // -----------------------------------------------------------------------------------------------------------------------------
 function isWinning (arrayMinePosition,string) {
-  if(arrayMinePosition.includes(string)) {
+  if(arrayMinePosition.includes(string)) { //Se l'input utente è presente nella lista dei numeri identificativi delle mine allora non stai vincendo: YOU is NOT winning: quindi isWinning lo imposto a false
     return false;
   }
   return true;
