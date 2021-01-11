@@ -75,7 +75,7 @@ console.log(arrayMinePosition);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // --------------------------------------------------------------------------------------------------------------------------
-//Il dato inserito dall'utente attraverso un prompt (e che salverò nella var "string") deve però esser validato. Creo per questo una FX ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string (che ne sarà, dunque, argomento):
+//Il dato numerico che l'utente inserirà attraverso un prompt (e che salverò nella var "string") dovrà però esser validato. Creo per questo una FX ad hoc che chiamo "stringValid" il cui parametro "inputUtente" sarà popolato dal valore di "string" (che ne sarà, dunque, argomento):
 function stringValid(inputUtente) {
   //String deve essere un numero, compreso tra 1 e 100
   if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
@@ -83,7 +83,7 @@ function stringValid(inputUtente) {
   }
   return true;
 }
-// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato il controllo, sul: numero inserito; sul numero di volte che quel numero è stato inserito; e sul numero di input utente che non deve superare un max di 84 inserimenti. Il tutto attraverso un IF.
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo, sul: numero di volte che quel numero è stato inserito; e sul numero di input utente che non deve superare un max di 84 inserimenti. Il tutto attraverso un IF.
 //Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
