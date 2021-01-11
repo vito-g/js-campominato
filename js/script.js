@@ -75,6 +75,14 @@ console.log(arrayMinePosition);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // --------------------------------------------------------------------------------------------------------------------------
+//Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
+function stringValid(inputUtente) {
+  //String deve essere un numero, compreso tra 1 e 100
+  if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
+    return false;
+  }
+  return true;
+}
 // Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo sul numero inserito attraverso un IF.
 //Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
 var arrayUserNumbers = [];
@@ -86,15 +94,7 @@ if (stringValid(inputUtente)) {
   if (arrayUserNumbers.includes(string) === true) {
     alert('Numero già inserito');
   } else {
-    
+
   }
-}
-//Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
-function stringValid(inputUtente) {
-//String deve essere un numero, compreso tra 1 e 100
-  if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
-    return false;
-  }
-  return true;
 }
 // -----------------------------------------------------------------------------------------------------------------------------
