@@ -83,8 +83,8 @@ function stringValid(inputUtente) {
   }
   return true;
 }
-// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo, sul: numero di volte che quel numero è stato inserito; e sul numero di input utente che non deve superare un max di 84 inserimenti. Il tutto attraverso un IF.
-//Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui si verifichi che: lo stesso numero non sia stato inserito + volte; e che il numero di input utente non abbia superato un max di 84 inserimenti. 
+//Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente finchè questi risultano non presenti nell'array randomico di 16 numeri identificativi delle mine. In altri termini, se il numero scelto dall'utente è pari ad uno presente nella lista delle mine l'utente perde.
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
