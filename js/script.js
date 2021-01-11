@@ -107,7 +107,6 @@ while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
      alert('Devi inserire un numero da 1 a 100');
   }
 }
-
 // -----------------------------------------------------------------------------------------------------------------------------
 function isWinning (arrayMinePosition,string) {
   if(arrayMinePosition.includes(string)) { //Se l'input utente è presente nella lista dei numeri identificativi delle mine allora non stai vincendo: YOU is NOT winning: quindi isWinning lo imposto a false
