@@ -76,3 +76,8 @@ console.log(arrayMinePosition);
 // L’utente non può inserire più volte lo stesso numero.
 
 var string = prompt('Inserisci un numero tra 1 e 100');
+
+//Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
+function stringValid(inputUtente) {
+
+}
