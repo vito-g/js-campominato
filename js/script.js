@@ -75,7 +75,7 @@ console.log(arrayMinePosition);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // --------------------------------------------------------------------------------------------------------------------------
-//Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
+//Il dato inserito dall'utente attraverso un prompt (e che salverò nella var "string") deve però esser validato. Creo per questo una FX ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string (che ne sarà, dunque, argomento):
 function stringValid(inputUtente) {
   //String deve essere un numero, compreso tra 1 e 100
   if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
