@@ -88,28 +88,33 @@ function stringValid(inputUtente) {
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
-var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
-stringValid(string);
-console.log(string);
-if (stringValid(inputUtente)) {
-  if (arrayUserNumbers.includes(string) === true) {
-    alert('Numero già inserito');
-  } else {
+// stringValid(string);
+// console.log(string);
+var string;
+while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
+  string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
+  if (stringValid(string)) {
+    if (arrayUserNumbers.includes(string) === true) {
+      alert('Numero già inserito');
+    } else {
       //SE il numero non è stato inserito deve sottoporlo a validazione che effettuo a mezzo di una nuova funzione. Questa dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
-      isWinning(arrayMinePosition,string);
+      if (isWinning(arrayMinePosition,string) == false) {
+        alert('Hai perso!');
+      }
+      arrayUserNumbers.push(string);
+      if (arrayUserNumbers.length === 84) {
+        alert('Hai vinto');
+      }
+    }
+  } else {
+     alert('Devi inserire un numero da 1 a 100');
   }
 }
-
+alert('Il tuo punteggio è ' + arrayUserNumbers.length);
 // -----------------------------------------------------------------------------------------------------------------------------
-// function isWinning (arrayMinePosition,string) {
-//   if(arrayMinePosition.includes(string)) {
-//     return false;
-//   }
-//   return true;
-// }
-function isWinning(arrayMinePosition,string) {
+function isWinning (arrayMinePosition,string) {
   if(arrayMinePosition.includes(string)) {
-    alert('Hai perso');
+    return false;
   }
-  alert('Hai vinto');
+  return true;
 }
