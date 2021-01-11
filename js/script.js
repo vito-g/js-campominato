@@ -33,40 +33,38 @@
 
 // Il computer deve generare 16 numeri casuali tra 1 e 100.
 //Creazione funzione ad hoc.
-//Creo prima una var che condenga l'espressione per il calcolo dei numeri randomici tra 1 e 100:
+//Creo prima una var che contenga l'espressione per il calcolo di un numero randomico tra 1 e 100:
 // var randomNumber = Math.floor((Math.random() * 100) + 1);
 // console.log(randomNumber);
-//La userò, all'interno di una funzione:
+//La userò, dunque, all'interno di una funzione i cui parametri, a e b, si popoleranno dei valori 1 e 100:
 function random(a, b) {
   var randomNumber = Math.floor((Math.random() * b) + a);
   // console.log(randomNumber);
-  return randomNumber;
+  return randomNumber;//restituirà il valore calcolato, nel punto in cui la funzione verrà richiamata.
 }
 
 // var minePosition = random(1, 100);
 // console.log('Un numero randomico da 1 a 100 è: ' + minePosition);
 
-//Ma, lo ribadisco: Il computer deve generare 16 numeri casuali. Posso, dunque, usare un ciclo FOR che abbia al suo interno la CALL alla funzione sopra creata:
-// for ( var i = 1; i <= 16; i++) { //(**)
+//Ma, lo ribadisco: Il computer deve generare, non uno, ma 16 numeri casuali. Posso, dunque, usare un ciclo FOR che abbia al suo interno la CALL alla funzione sopra creata:
+// for ( var i = 1; i <= 16; i++) {
 //   var minePosition = random(1, 100);
 //   console.log(minePosition);
 // }
-// Come da traccia, però, "I numeri non possono essere duplicati (tadaaa!)". Devo fare in modo, dunque, che ciascuno dei 16 numeri individuati randomicamente sia diverso da tutti gli altri. Solo allora inserirò ciascun numero in un array che li contenga tutti e 16. Mi occorre una Condizione che faccia questa verifica: Istruzione IF da inserire in un Ciclo:
+// Come da traccia, però, "si deve escludere che ciascuno numero (che inserirò di volta in volta in un array) si possa ripetere all'interno dell' array". Fatta questa verifica, popolerò l' array sino ad un max di 16 numeri. Mi occorrerà, anche, una Condizione che faccia questa verifica: Istruzione IF da inserire in un Ciclo:
 // -----------------------------------
 var arrayMinePosition = [];
 // for ( var i = 0; i < 16; i++) {
 //   arrayMinePosition.push(random(1, 100));
-//   // if (minePosition !== minePosition) {
-//     // console.log(arrayMinePosition);
-//   // }
 // }
 // console.log(arrayMinePosition);
-// // Che può produrre numeri randomici che si ripteno; come di seguito:
+// // Che può produrre numeri randomici che si ripetono; come di seguito:
 // // script.js:63 (16) [100, 92, 63, 75, 18, 66, 88, 47, 11, 85, 82, 19, 82, 28, 98, 81]
 // // -----------------------------------------------------------------------------------------------------------------------
-// Sostituisco il ciclo For, di cui sopra, con un While:
+// Sostituisco, pertanto, il ciclo For, di cui sopra, con un While. Non conosco, infatti, a priori, quante volte sarà necessario richiedere all'utente un numero, prima che l'array sia popolato da valori numerici che siano unici. Escludo così il contatore, tipico del Ciclo FOR, attendendomi esclusivamente al raggiungimento del riempimento max dell'array con numeri accettabili.
 while (arrayMinePosition.length < 16) {
   var numRandom = random(1,100);//Crea un numero random e lo salva nella var NumRandom
+  //Pusho esclusivamente numeri non ancora presenti nell'array:
   if (arrayMinePosition.includes(numRandom) === false) {
     arrayMinePosition.push(numRandom);
   }
@@ -75,7 +73,7 @@ console.log(arrayMinePosition);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
 // --------------------------------------------------------------------------------------------------------------------------
-//Il dato numerico che l'utente inserirà attraverso un prompt (e che salverò nella var "string") dovrà però esser validato. Creo per questo una FX ad hoc che chiamo "stringValid" il cui parametro "inputUtente" sarà popolato dal valore di "string" (che ne sarà, dunque, argomento):
+//Il dato numerico che l'utente inserirà attraverso un prompt (e che salverò nella var "string") dovrà, però, esser validato. Creo per questo una FX ad hoc che chiamo "stringValid" il cui parametro "inputUtente" sarà popolato dal valore di "string" (che ne sarà, dunque, argomento):
 function stringValid(inputUtente) {
   //L'input dell'utente deve essere un numero (userò, dunque, il parseInt in fase di prompt) che dovrà esser compreso tra 1 e 100
   if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
@@ -83,13 +81,11 @@ function stringValid(inputUtente) {
   }
   return true;
 }
-// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui si verifichi che: lo stesso numero non sia stato inserito + volte; e che il numero di input utente non abbia superato un max di 84 inserimenti. 
-//Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente finchè questi risultano non presenti nell'array randomico di 16 numeri identificativi delle mine. In altri termini, se il numero scelto dall'utente è pari ad uno presente nella lista delle mine l'utente perde.
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque, il prompt va inserito in un ciclo in cui si verifichi che: lo stesso numero non sia stato inserito + volte dall'utente; e che il numero di input utente non abbia superato un max di 84 inserimenti di valori accettabili.
+//Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente finchè questi risultano non presenti nell'array randomico di 16 numeri identificativi delle mine. In altri termini, se il numero scelto dall'utente è pari ad uno presente nella lista delle mine, l'utente perde ed il game si interrompe.
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
-// stringValid(string);
-// console.log(string);
 var string;
 while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
   string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
