@@ -51,7 +51,7 @@ function random(a, b) {
 //   var minePosition = random(1, 100);
 //   console.log(minePosition);
 // }
-// Come da traccia, però, "I numeri non possono essere duplicati (tadaaa!)". Devo fare in modo, dunque, che ciascuno dei 16 numeri individuati randomicamente sia diverso da tutti gli altri. Mi occorre una Condizione che faccia questa verifica: Istruzione IF da inserire in un Ciclo:
+// Come da traccia, però, "I numeri non possono essere duplicati (tadaaa!)". Devo fare in modo, dunque, che ciascuno dei 16 numeri individuati randomicamente sia diverso da tutti gli altri. Solo allora inserirò ciascun numero in un array che li contenga tutti e 16. Mi occorre una Condizione che faccia questa verifica: Istruzione IF da inserire in un Ciclo:
 // -----------------------------------
 var arrayMinePosition = [];
 // for ( var i = 0; i < 16; i++) {
