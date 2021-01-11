@@ -54,13 +54,21 @@ function random(a, b) {
 // Come da traccia, però, "I numeri non possono essere duplicati (tadaaa!)". Devo fare in modo, dunque, che ciascuno dei 16 numeri individuati randomicamente sia diverso da tutti gli altri. Mi occorre una Condizione che faccia questa verifica: Istruzione IF da inserire nel Ciclo FOR:
 // -----------------------------------
 var arrayMinePosition = [];
-for ( var i = 0; i < 16; i++) {
-  arrayMinePosition.push(random(1, 100));
-  // if (minePosition !== minePosition) {
-    // console.log(arrayMinePosition);
-  // }
-}
-console.log(arrayMinePosition);
+// for ( var i = 0; i < 16; i++) {
+//   arrayMinePosition.push(random(1, 100));
+//   // if (minePosition !== minePosition) {
+//     // console.log(arrayMinePosition);
+//   // }
+// }
+// console.log(arrayMinePosition);
 // // Che può produrre numeri randomici che si ripteno; come di seguito:
 // // script.js:63 (16) [100, 92, 63, 75, 18, 66, 88, 47, 11, 85, 82, 19, 82, 28, 98, 81]
 // // -----------------------------------------------------------------------------------------------------------------------
+// Sostituisco il ciclo For, di cui sopra, con un While:
+while (arrayMinePosition.length < 16) {
+  var numRandom = random(1,100);//Crea un numero random e lo salva nella var NumRandom
+  if (arrayMinePosition.includes(numRandom) === false) {
+    arrayMinePosition.push(numRandom);
+  }
+}
+console.log(arrayMinePosition);
