@@ -77,7 +77,7 @@ console.log(arrayMinePosition);
 // --------------------------------------------------------------------------------------------------------------------------
 //Il dato numerico che l'utente inserirà attraverso un prompt (e che salverò nella var "string") dovrà però esser validato. Creo per questo una FX ad hoc che chiamo "stringValid" il cui parametro "inputUtente" sarà popolato dal valore di "string" (che ne sarà, dunque, argomento):
 function stringValid(inputUtente) {
-  //String deve essere un numero, compreso tra 1 e 100
+  //L'input dell'utente deve essere un numero (userò, dunque, il parseInt in fase di prompt) che dovrà esser compreso tra 1 e 100
   if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
     return false;
   }
