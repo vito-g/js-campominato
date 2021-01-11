@@ -86,7 +86,8 @@ function stringValid(inputUtente) {
 // Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo sul numero inserito attraverso un IF.
 //Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
 var arrayUserNumbers = [];
-//Qui andrà il ciclo while:
+//Qui sotto andrà il ciclo while:
+// ------------------------------------------------------------------------------------------------------------------------------
 var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
 stringValid(string);
 console.log(string);
@@ -94,7 +95,21 @@ if (stringValid(inputUtente)) {
   if (arrayUserNumbers.includes(string) === true) {
     alert('Numero già inserito');
   } else {
-      //SE il numero non è stato inserito deve sottoporlo a validazione che effettuo a mezzo di una nuova funzione
+      //SE il numero non è stato inserito deve sottoporlo a validazione che effettuo a mezzo di una nuova funzione. Questa dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
+      isWinning(arrayMinePosition,string);
   }
 }
+
 // -----------------------------------------------------------------------------------------------------------------------------
+// function isWinning (arrayMinePosition,string) {
+//   if(arrayMinePosition.includes(string)) {
+//     return false;
+//   }
+//   return true;
+// }
+function isWinning(arrayMinePosition,string) {
+  if(arrayMinePosition.includes(string)) {
+    alert('Hai perso');
+  }
+  alert('Hai vinto');
+}
