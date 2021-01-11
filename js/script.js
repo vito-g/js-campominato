@@ -72,3 +72,7 @@ while (arrayMinePosition.length < 16) {
   }
 }
 console.log(arrayMinePosition);
+// In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
+// L’utente non può inserire più volte lo stesso numero.
+
+var string = prompt('Inserisci un numero tra 1 e 100');
