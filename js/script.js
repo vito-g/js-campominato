@@ -79,6 +79,8 @@ console.log(arrayMinePosition);
 var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
 stringValid(string);
 console.log(string);
+//Ho bisogno, però, di un array vuoto, ovviamente esterno al Ciclo, che si popoli , di volta in volta, con i valori inseriti dall'utente:
+var arrayUserNumber = [];
 //Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
 function stringValid(inputUtente) {
 //String deve essere un numero, compreso tra 1 e 100
