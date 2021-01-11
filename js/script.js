@@ -74,15 +74,17 @@ while (arrayMinePosition.length < 16) {
 console.log(arrayMinePosition);
 // In seguito deve chiedere all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 // L’utente non può inserire più volte lo stesso numero.
-
+// --------------------------------------------------------------------------------------------------------------------------
+// Ricordiamo, però, che l'input utente deve esser inserito ben 84 volte. Inoltre, l’utente non può inserire più volte lo stesso numero. Dunque il prompt va inserito in un ciclo in cui venga effettuato anche il controllo sul numero inserito attraverso un IF.
 var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
 stringValid(string);
 console.log(string);
 //Il dato inserito dall'utente deve però esser validato. Creo per questo una funzione ad hoc che chiamo stringValid il cui parametro inputUtente sarà popolato dal valore di string:
 function stringValid(inputUtente) {
-//Primo grado di validazione (string deve essere un numero)
+//String deve essere un numero, compreso tra 1 e 100
   if (isNaN(inputUtente) || (inputUtente) > 100 || (inputUtente) <= 0) {
     return false;
   }
   return true;
 }
+// -----------------------------------------------------------------------------------------------------------------------------
