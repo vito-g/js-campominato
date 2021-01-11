@@ -94,7 +94,7 @@ if (stringValid(inputUtente)) {
   if (arrayUserNumbers.includes(string) === true) {
     alert('Numero già inserito');
   } else {
-
+      //SE il numero non è stato inserito deve sottoporlo a validazione che effettuo a mezzo di una nuova funzione
   }
 }
 // -----------------------------------------------------------------------------------------------------------------------------
