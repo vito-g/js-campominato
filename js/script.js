@@ -61,7 +61,7 @@ var arrayMinePosition = [];
 // // Che può produrre numeri randomici che si ripetono; come di seguito:
 // // script.js:63 (16) [100, 92, 63, 75, 18, 66, 88, 47, 11, 85, 82, 19, 82, 28, 98, 81]
 // // -----------------------------------------------------------------------------------------------------------------------
-// Sostituisco, pertanto, il ciclo For, di cui sopra, con un While. Non conosco, infatti, a priori, quante volte sarà necessario richiedere all'utente un numero, prima che l'array sia popolato da valori numerici che siano unici. Escludo così il contatore, tipico del Ciclo FOR, attendendomi esclusivamente al raggiungimento del riempimento max dell'array con numeri accettabili.
+// Sostituisco, pertanto, il ciclo For, di cui sopra, con un While. Non conosco, infatti, a priori, quante volte sarà necessario randomizzare un numero, prima che l'array sia popolato da valori numerici che siano unici. Escludo così il contatore, tipico del Ciclo FOR, attendendomi esclusivamente al raggiungimento del riempimento max dell'array con numeri che non si ripetano in esso.
 while (arrayMinePosition.length < 16) {
   var numRandom = random(1,100);//Crea un numero random e lo salva nella var NumRandom
   //Pusho esclusivamente numeri non ancora presenti nell'array:
