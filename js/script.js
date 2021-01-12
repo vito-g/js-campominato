@@ -87,14 +87,13 @@ function stringValid(inputUtente) {
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
-var string;
 while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
-  string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
+  var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
   if (stringValid(string)) { //SE la FX "stringValid" restituisce valore TRUE: i valori inseriti dall'utente sono accettabili e lo script esegue il blocco di codice che segue
     if (arrayUserNumbers.includes(string)) { //Se il numero inserito è incluso già nell'array, allora avvisa l'utente di questo.
       alert('Numero già inserito');
     } else {
-      //SE il numero non è stato inserito devo controllare che non corrisponda a nessuno dei numeri identificativi delle mine. Faccio il controllo a mezzo di una nuova FX che chiamerò "isWinning". Questa, dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
+      //SE il numero non è già stato inserito devo controllare che non corrisponda a nessuno dei 16 numeri, randomizzati precedentemente ed inseriti in un array, identificativi delle mine. Faccio il controllo a mezzo di una nuova FX che chiamerò "isWinning". Questa, dovendo confrontare i valori generati in arrayMinePosition con quelli inseriti dall'utente(string), avrà come argomenti: arrayMinePosition & string
       // if (isWinning(arrayMinePosition,string) == false) { //Riga di codice che posso anche scrivere come segue
       if (!isWinning(arrayMinePosition,string)) {
         alert('Hai perso! Ed Il tuo punteggio è ' + arrayUserNumbers.length);
