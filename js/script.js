@@ -87,7 +87,7 @@ function stringValid(inputUtente) {
 var arrayUserNumbers = [];
 //Qui sotto andrà il ciclo while:
 // ------------------------------------------------------------------------------------------------------------------------------
-while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) {
+while (isWinning(arrayMinePosition,string) && arrayUserNumbers.length < 84) { //L'utente prosegue nel game fintanto che inserisce numeri vincenti e per un numero di volte non superiore ad 84
   var string = parseInt(prompt('Inserisci un numero tra 1 e 100'));
   if (stringValid(string)) { //SE la FX "stringValid" restituisce valore TRUE: i valori inseriti dall'utente sono accettabili e lo script esegue il blocco di codice che segue
     if (arrayUserNumbers.includes(string)) { //Se il numero inserito è incluso già nell'array, allora avvisa l'utente di questo.
